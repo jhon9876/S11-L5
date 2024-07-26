@@ -26,9 +26,24 @@ public class Video extends OggettiMultimediali implements Riproducibile, NonRipr
         this.volume++;
     }
 
+    /*Se il video è riprodotto, ripete per un numero di volte pari alla durata la stampa del titolo
+     * concatenato a una sequenza di punti esclamativi di lunghezza pari al volume e poi a una sequenza
+     * di asterischi di lunghezza pari alla luminosità (una stampa per riga)*/
     @Override
     public void play() {
-        
+        for (int i = 0; i < this.durata; i++) {
+            System.out.printf(this.Titolo + " ");
+
+            for (int j = 0; j < this.volume; j++) {
+                System.out.printf("!");
+
+            }
+            System.out.printf(" ");
+            for (int k = 0; k < this.luminosita; k++) {
+                System.out.printf("*");
+            }
+            System.out.println("");
+        }
     }
 
 
