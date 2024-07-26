@@ -26,6 +26,11 @@ public class Video extends OggettiMultimediali implements Riproducibile, NonRipr
         this.volume++;
     }
 
+    @Override
+    public void play() {
+        
+    }
+
 
     @Override
     public void aumentaLuminosita() {
