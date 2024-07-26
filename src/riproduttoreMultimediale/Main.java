@@ -7,8 +7,8 @@ public class Main {
 
         a1.play();*/
         /*VERIFICA PLAY VIDEO*/
-        Video v1 = new Video("hello", 5, 2, 7);
-        v1.play();
+        /*Video v1 = new Video("hello", 5, 2, 7);
+        v1.play();*/
 
     }
 }
