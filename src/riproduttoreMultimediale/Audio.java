@@ -15,11 +15,15 @@ public class Audio extends OggettiMultimediali implements Riproducibile {
 
     @Override
     public void abbassaVolume() {
-        this.volume++;
+        this.volume--;
     }
 
     @Override
     public void alzaVolume() {
-        this.volume--;
+        this.volume++;
+    }
+
+    public int getVolume() {
+        return volume;
     }
 }
