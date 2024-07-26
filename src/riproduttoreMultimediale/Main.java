@@ -10,7 +10,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         /*VERIFICA METODO PLAY AUDIO*/
         /*Audio a1 = new Audio("hello_world", 2, 5);
@@ -21,10 +20,63 @@ public class Main {
         v1.play();*/
         Scanner scanner = new Scanner(System.in);
         OggettiMultimediali[] objM = new OggettiMultimediali[5];
+
+
+        inserisciOggetti(scanner, objM);
+
+        System.out.println("Inserisci un numero da 1 a 5 per eseguire il file.");
+        System.out.println("Eseguire 0 per terminare");
+        boolean condition = true;
+        while (condition) {
+            int valoreInserito = scanner.nextInt();
+            switch (valoreInserito) {
+                case 0: {
+                    condition = false;
+                    break;
+                }
+                case 1: {
+                    playOrShow(objM, 0);
+                    break;
+                }
+                case 2: {
+                    playOrShow(objM, 1);
+                    break;
+                }
+                case 3: {
+                    playOrShow(objM, 2);
+                    break;
+                }
+                case 4: {
+                    playOrShow(objM, 3);
+                    break;
+                }
+                case 5: {
+                    playOrShow(objM, 4);
+                    break;
+                }
+                default:
+                    System.out.println("numero fuori dal range");
+            }
+        }
+
+
+    }
+
+    public static void playOrShow(OggettiMultimediali[] objM, int posizioneArray) {
+        if (objM[posizioneArray] instanceof Immagini) {
+            ((Immagini) objM[posizioneArray]).show();
+        } else if (objM[posizioneArray] instanceof Audio) {
+            ((Audio) objM[posizioneArray]).play();
+        } else if (objM[posizioneArray] instanceof Video) {
+            {
+                ((Video) objM[posizioneArray]).play();
+            }
+        }
+    }
+
+    public static void inserisciOggetti(Scanner scanner, OggettiMultimediali[] objM) {
         System.out.println("Inserisci il nome dell'oggetto da creare tra audio, immagine e video");
         Random rand = new Random();
-
-
         for (int i = 0; i < 5; i++) {
             int durataRandom = rand.nextInt(1, 5);
             int volumeRandom = rand.nextInt(1, 5);
@@ -59,52 +111,5 @@ public class Main {
 
         }
 
-
-        System.out.println("Inserisci un numero da 1 a 5 per eseguire il file.");
-        System.out.println("Eseguire 0 per terminare");
-        boolean condition = true;
-        while (condition) {
-            int valoreInserito = scanner.nextInt();
-            switch (valoreInserito) {
-                case 1: {
-                    playOrShow(objM, 0);
-                    break;
-                }
-                case 2: {
-                    playOrShow(objM, 1);
-                    break;
-                }
-                case 3: {
-                    playOrShow(objM, 2);
-                    break;
-                }
-                case 4: {
-                    playOrShow(objM, 3);
-                    break;
-                }
-                case 5: {
-                    playOrShow(objM, 4);
-                    break;
-                }
-                case 0: {
-                    condition = false;
-                    break;
-                }
-            }
-        }
-
-
-    }
-
-    public static void playOrShow(OggettiMultimediali[] objM, int posizioneArray) {
-        if (objM[posizioneArray] instanceof Immagini) {
-            ((Immagini) objM[posizioneArray]).show();
-        } else if (objM[posizioneArray] instanceof Audio) {
-            ((Audio) objM[posizioneArray]).play();
-        } else if (objM[posizioneArray] instanceof Video) {
-            {
-                ((Video) objM[posizioneArray]).play();
-            }
-        }
     }
 }
