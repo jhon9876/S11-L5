@@ -26,6 +26,15 @@ public class Video extends OggettiMultimediali implements Riproducibile, NonRipr
         this.volume++;
     }
 
+    @Override
+    public String toString() {
+        return "Video{" +
+                "durata=" + durata +
+                ", volume=" + volume +
+                ", luminosita=" + luminosita +
+                '}';
+    }
+
     /*Se il video è riprodotto, ripete per un numero di volte pari alla durata la stampa del titolo
      * concatenato a una sequenza di punti esclamativi di lunghezza pari al volume e poi a una sequenza
      * di asterischi di lunghezza pari alla luminosità (una stampa per riga)*/
